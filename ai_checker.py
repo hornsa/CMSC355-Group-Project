@@ -1,4 +1,9 @@
 import joblib
+from gui import run_gui
+
+#Run the GUI in a separate thread
+if __name__ == "__main__":
+    run_gui()
 try:
     model = joblib.load("drug_interaction_model.pkl")
 except FileNotFoundError:
