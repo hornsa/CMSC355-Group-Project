@@ -4,9 +4,9 @@ try:
 except FileNotFoundError:
     raise FileNotFoundError("File not found. Make sure drug_interaction_model.pkl exists.")
 def predict_interaction(primary_drug, second_drug):
-    #Lowercase input
+#Lowercase input
     drug_pair = f"{primary_drug.lower()} {second_drug.lower()}"
-    #Use the AI model to make a prediction based on the pairs
+#Use the AI model to make a prediction based on the pairs
     prediction = model.predict([drug_pair])
     probabilities = model.predict_proba([drug_pair])[0]
     confidence = max(probabilities)
